@@ -68,6 +68,15 @@ public class Readwriteexcel
 		fos = new FileOutputStream(src); 
 		wb.write(fos);
 	}
+	public static int getlastrownum(String path, int sheetnum) throws IOException
+	{
+		file = new File(path);
+		fis = new FileInputStream(file);
+		workbook = new 	XSSFWorkbook(fis);	
+		sheet = workbook.getSheetAt(sheetnum);
+		int rownum = sheet.getLastRowNum();
+		return rownum;
+	}
 	/*@Test
 public void g() throws IOException
 {
