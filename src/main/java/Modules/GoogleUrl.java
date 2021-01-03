@@ -49,7 +49,7 @@ public class GoogleUrl extends AppDriver
         	for(int i = startcity; i<citylength; i++)
         	{
         		String city = Readwriteexcel.readexcel(Citypath, citysheetindex, i, 0);
-        		for(int j =1; j<categorylength; j++)
+        		for(int j =0; j<categorylength; j++)
         		{
         			String category = Readwriteexcel.readexcel(Categorypath, categorysheetindex, j, 0);
         			String input = category+ " " +"in"+ " "+city;

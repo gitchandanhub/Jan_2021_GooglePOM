@@ -82,10 +82,10 @@ public class SampleGoogle extends AppDriver
 	{
 		int cityrownum = Readwriteexcel.getlastrownum(citysheetpath, 0);
 		int categoryrownum = Readwriteexcel.getlastrownum(categorysheetpath, 0);
-		for(int i =1; i<cityrownum; i++)
+		for(int i =1; i<cityrownum+1; i++)
 		{
 		String city = Readwriteexcel.readexcel(citysheetpath, 0, i, 0);
-		for(int j =1; j<categoryrownum; j++)
+		for(int j =1; j<18; j++)
 		{
 		   String category = Readwriteexcel.readexcel(categorysheetpath, 0, j, 0);
 		String input = category+ " " +"in"+ " "+city;

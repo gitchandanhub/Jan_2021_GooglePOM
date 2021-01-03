@@ -34,6 +34,7 @@ public class Googleda  extends AppDriver
 	String website = "";
 	String Affiliation = "";
 	String Founded = "";
+	String number = "";
 	AtomicInteger count = new AtomicInteger(1);
         public Googleda()
         {
@@ -162,7 +163,7 @@ public class Googleda  extends AppDriver
     		}
     		try
     		{
-    			String number = Elenumber.getText();
+    			 number = Elenumber.getText();
     			row.createCell(2).setCellValue(number);
     			fos = new FileOutputStream(src); 
     			wb.write(fos);
@@ -171,7 +172,7 @@ public class Googleda  extends AppDriver
     		{
     			try
     			{
-    				String number = driver.findElement(By.xpath(".//*[@class = 'w8qArf']/following-sibling::span/a")).getText();
+    				 number = driver.findElement(By.xpath(".//*[@class = 'w8qArf']/following-sibling::span/a")).getText();
     				row.createCell(2).setCellValue(number);
     				fos = new FileOutputStream(src); 
     				wb.write(fos);
@@ -180,7 +181,8 @@ public class Googleda  extends AppDriver
     			{
     				try
     				{
-    					String number = driver.findElement(By.cssSelector(".LrzXr.zdqRlf.kno-fv>span>span")).getText();
+    					number = driver.findElement(By.xpath("//*[@id=\"akp_tsuid15\"]/div/div[1]/div/div/div/div[1]/div/div[1]/div/div[5]/div/div/span[2]/a")).getText();
+    					 
     					row.createCell(2).setCellValue(number);
     					fos = new FileOutputStream(src); 
     					wb.write(fos);	
@@ -189,14 +191,24 @@ public class Googleda  extends AppDriver
     				{
     					try
     					{
-    						String number = driver.findElement(By.xpath(".//*[@class = 'LrzXr zdqRlf kno-fv']")).getText();
+    						 number = driver.findElement(By.xpath(".//*[@class = 'LrzXr zdqRlf kno-fv']")).getText();
     						row.createCell(2).setCellValue(number);
     						fos = new FileOutputStream(src); 
     						wb.write(fos);
     					}
     					catch(Exception e11)
     					{
-    						
+    						try
+    						{
+    							number = driver.findElement(By.cssSelector(".LrzXr.zdqRlf.kno-fv>span>span")).getText();
+    							row.createCell(2).setCellValue(number);
+        						fos = new FileOutputStream(src); 
+        						wb.write(fos);
+    						}
+    						catch(Exception e12)
+    						{
+    							
+    						}
     					}
     				}
     			}

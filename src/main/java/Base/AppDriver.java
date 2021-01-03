@@ -16,7 +16,7 @@ public class AppDriver
     {
     	System.out.println(conf.getProperty("driverpath"));
     	//System.setProperty("webdriver.chrome.driver", conf.getProperty("driverpath"));
-    	System.setProperty("webdriver.chrome.driver", "D:\\Software\\Selenium\\New Driver\\Chrome Driver 83\\chromedriver.exe");
+    	System.setProperty("webdriver.chrome.driver", "D:\\Software\\Selenium\\New Driver\\ChromeDriver_87\\chromedriver.exe");
     	System.setProperty("webdriver.chrome.silentOutput", "true");
     	driver = new ChromeDriver();
     	driver.manage().window().maximize();

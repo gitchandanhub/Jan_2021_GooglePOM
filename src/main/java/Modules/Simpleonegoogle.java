@@ -27,6 +27,7 @@ public class Simpleonegoogle extends AppDriver
 	XSSFSheet sheet;
 	XSSFRow row;
 	FileOutputStream fos;
+	String number = "";
 	String website = "";
 	String Principal = "";
 	String Affiliation = "";
@@ -88,14 +89,17 @@ public class Simpleonegoogle extends AppDriver
        	{    	
        	for(int i =0; i<list.size(); i++)
        	{
-       		((JavascriptExecutor)driver).executeScript("scroll(10,400)");
+       		((JavascriptExecutor)driver).executeScript("scroll(0,600)");
+       		
        		list.get(i).click();
-       		Thread.sleep(3000);
+       		Thread.sleep(2000);
        		row = sheet.createRow((short)count.getAndIncrement());
        		row.createCell(4).setCellValue(city);
        		row.createCell(5).setCellValue(category);
        		fos = new FileOutputStream(src); 
        		wb.write(fos);
+       		
+       		
        		try
        		{
        			String name = list.get(i).getText();
@@ -151,7 +155,7 @@ public class Simpleonegoogle extends AppDriver
        		}
        		try
        		{
-       			String number = Elenumber.getText();
+       			number = Elenumber.getText();
        			row.createCell(2).setCellValue(number);
        			fos = new FileOutputStream(src); 
        			wb.write(fos);
@@ -160,7 +164,7 @@ public class Simpleonegoogle extends AppDriver
        		{
        			try
        			{
-       				String number = driver.findElement(By.xpath(".//*[@class = 'w8qArf']/following-sibling::span/a")).getText();
+       				 number = driver.findElement(By.xpath(".//*[@class = 'w8qArf']/following-sibling::span/a")).getText();
        				row.createCell(2).setCellValue(number);
        				fos = new FileOutputStream(src); 
        				wb.write(fos);
@@ -169,7 +173,7 @@ public class Simpleonegoogle extends AppDriver
        			{
        				try
        				{
-       					String number = driver.findElement(By.cssSelector(".LrzXr.zdqRlf.kno-fv>span>span")).getText();
+       					 number = driver.findElement(By.cssSelector(".LrzXr.zdqRlf.kno-fv>span>span")).getText();
        					row.createCell(2).setCellValue(number);
        					fos = new FileOutputStream(src); 
        					wb.write(fos);	
@@ -178,7 +182,7 @@ public class Simpleonegoogle extends AppDriver
        				{
        					try
        					{
-       						String number = driver.findElement(By.xpath(".//*[@class = 'LrzXr zdqRlf kno-fv']")).getText();
+       						 number = driver.findElement(By.xpath(".//*[@class = 'LrzXr zdqRlf kno-fv']")).getText();
        						row.createCell(2).setCellValue(number);
        						fos = new FileOutputStream(src); 
        						wb.write(fos);
